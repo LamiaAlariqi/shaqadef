@@ -75,9 +75,9 @@ class _SplashBodyState extends State<SplashBody>
             ),
           ),
             Container(
-          color: Colors.white.withOpacity(0.50), // 🔹 opacity صفر
+          color: Colors.white.withOpacity(0.50), 
           ),
-          // الأيقونة والنص
+        
           if (_showMainContent)
             transition(
               const Offset(0, -1),

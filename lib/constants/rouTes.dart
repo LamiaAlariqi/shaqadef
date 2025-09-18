@@ -14,6 +14,7 @@ import 'package:shaqadef/screens/more.dart';
 import 'package:shaqadef/screens/new_password_screen.dart';
 import 'package:shaqadef/screens/optscreen.dart';
 import 'package:shaqadef/screens/payment_screen.dart';
+import 'package:shaqadef/screens/personalInfo.dart';
 import 'package:shaqadef/screens/platform_policy.dart';
 import 'package:shaqadef/screens/product_details.dart';
 import 'package:shaqadef/screens/profile.dart';
@@ -54,6 +55,7 @@ class Routes{
   static const String defination1="Defination1";
   static const String defination2="Defination2";
   static const String firstscreen="Firstscreen";
+  static const String personalinfo="personalinfo";
 }
 
 Map<String,Widget Function(BuildContext)> routes={
@@ -82,5 +84,6 @@ Routes.newpasswordScreen: (context) => const NewPasswordScreen(),
 Routes.otpScreen: (context) => const OtpScreen(),
 Routes.savedPersonalData:(context)=>SavedPersonalData(),
 Routes.defination1:(context)=>Defination1(),
-Routes.firstscreen:(context)=>Firstscreen()
+Routes.firstscreen:(context)=>Firstscreen(),
+Routes.personalinfo:(context)=>Personalinfo()
 };

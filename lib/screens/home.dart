@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shaqadef/constants/colors.dart';
 import 'package:shaqadef/widget/usedwidget/app_bar_general.dart';
 import 'package:shaqadef/widget/usedwidget/bottomnavigator.dart';
 import 'package:shaqadef/constants/size.dart';
@@ -10,10 +11,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(preferredSize: Size.fromHeight(hScreen* 0.1), 
-      child: const AppBarBody(text: "الفئات",)),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(hScreen * 0.1),
+        child: const AppBarBody(
+          leadingIcon: Icons.shopping_cart_outlined,
+          leadingIconColor: Colors.black, 
+        ),
+      ),
       body: const HomeBody(),
-      
     );
   }
 }

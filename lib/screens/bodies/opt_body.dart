@@ -87,7 +87,7 @@ class _CustomOtpState extends State<CustomOtp> {
             height: hScreen * 0.07,
             width: wScreen * 0.9,
             onPressed: () {
-             Navigator.pushReplacementNamed(context, Routes.mainScreen);
+             Navigator.pushReplacementNamed(context, Routes.personalinfo);
             },
             textsize: fSize * 0.8,
           ),

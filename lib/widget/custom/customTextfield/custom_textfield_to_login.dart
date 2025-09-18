@@ -19,6 +19,7 @@ class CustomTextFormFieldToLogin extends StatelessWidget {
     this.width,
     this.fsize,
     this.showBorder = true, 
+    this.isNull = false,
   });
 
   final String hintText;
@@ -36,11 +37,21 @@ class CustomTextFormFieldToLogin extends StatelessWidget {
   final double? width;
   final double? fsize;
   final bool showBorder; 
+  final bool isNull;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-    
+      validator: (value) {
+        if (isNull) {
+          return null;
+        } else {
+          if (value == null || value.isEmpty) {
+            return "هذا الحقل مطلوب";
+          }
+          return null;
+        }
+      },
       controller: controller,
       readOnly: readOnly,
       keyboardType: keyboardType,
@@ -58,26 +69,37 @@ class CustomTextFormFieldToLogin extends StatelessWidget {
           suffixIcon,
           color: suffixIconColor,
         ),
-        border: showBorder ? OutlineInputBorder(
-          borderRadius: BorderRadius.circular(wScreen * .04),
-          borderSide: BorderSide(
-            color: Theme.of(context).primaryColorLight,
-          ),
-        ) : null,
-        enabledBorder: showBorder ? OutlineInputBorder(
-          borderSide: BorderSide(
-            color: enabledBorderColor,
-            width: width ?? 3,
-          ),
-          borderRadius: BorderRadius.circular(wScreen * .04),
-        ) : null,
-        focusedBorder: showBorder ? OutlineInputBorder(
-          borderRadius: BorderRadius.circular(wScreen * .04),
-          borderSide: BorderSide(
-            color: focusedBorderColor,
-            width: width ?? 2.5,
-          ),
-        ) : null,
+        border: showBorder
+            ? OutlineInputBorder(
+                borderRadius: BorderRadius.circular(wScreen * .04),
+                borderSide: BorderSide(
+                  color: Theme.of(context).primaryColorLight,
+                ),
+              )
+            : null,
+        enabledBorder: showBorder
+            ? OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: enabledBorderColor,
+                  width: width ?? 3,
+                ),
+                borderRadius: BorderRadius.circular(wScreen * .04),
+              )
+            : null,
+        focusedBorder: showBorder
+            ? OutlineInputBorder(
+                borderRadius: BorderRadius.circular(wScreen * .04),
+                borderSide: BorderSide(
+                  color: focusedBorderColor,
+                  width: width ?? 2.5,
+                ),
+              )
+            : null,
+        errorStyle: TextStyle(
+          color: Colors.red,
+          fontSize: fSize * 0.7,
+          fontWeight: FontWeight.bold,
+        ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: wScreen * .05,
           vertical: hScreen * .01,

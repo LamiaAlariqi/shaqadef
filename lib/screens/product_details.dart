@@ -10,21 +10,22 @@ class ProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(Icons.arrow_forward_ios),
-              color: PrimaryColor,
-            ),
-          ],
+        title:Padding(
+          padding:EdgeInsets.only(bottom:hScreen*0.013),
+          child: Text("تفاصيل المنتج",style: TextStyle(color: appTextColorPrimary,fontSize: fSize*1.2)),
         ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        centerTitle: true,
+       
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.share,color:  appTextColorPrimary,),
+            onPressed: () {
+             
+            },
+          )
+        ],
       ),
+      
       body: const ProductDetailsBody(),
     );
   }

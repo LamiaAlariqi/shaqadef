@@ -19,4 +19,7 @@ static const String logo='assets/LOGO.png';
 static const String logo2="assets/logo2.png";
 static const String google="assets/google.png";
 static const String shaqadef="assets/shaqadef.png";
+static const String shopNow="assets/shop_now.png";
+static const String shopNow1="assets/shop_now1.png";
+static const String ref3="assets/ref2.webp";
 }

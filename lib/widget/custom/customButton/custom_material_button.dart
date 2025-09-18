@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shaqadef/constants/size.dart';
 
-
 class CustomMaterialButton extends StatelessWidget {
   final void Function()? onPressed;
   final String title;
@@ -14,7 +13,9 @@ class CustomMaterialButton extends StatelessWidget {
   final double height;
   final double width;
   final double? textsize;
-  CustomMaterialButton({
+  final Icon? prefixIcon;
+
+  const CustomMaterialButton({
     super.key,
     this.onPressed,
     required this.title,
@@ -26,7 +27,8 @@ class CustomMaterialButton extends StatelessWidget {
     required this.borderColor,
     required this.height,
     required this.width,
-    this.textsize
+    this.textsize,
+    this.prefixIcon,
   });
 
   @override
@@ -54,13 +56,23 @@ class CustomMaterialButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(wScreen * .05),
             borderSide: BorderSide.none,
           ),
-          child: Text(
-            title,
-            style: TextStyle(
-              color: textColor,
-              fontSize: textsize??fSize*1.1,
-              fontWeight: FontWeight.bold,
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (prefixIcon != null) ...[
+                prefixIcon!,
+                SizedBox(width: wScreen * 0.02),
+              ],
+              Text(
+                title,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize: textsize ?? fSize * 1.1,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
           ),
         ),
       ),

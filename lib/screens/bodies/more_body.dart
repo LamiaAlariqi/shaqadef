@@ -57,7 +57,8 @@ class MoreBody extends StatelessWidget {
                 Divider(height: hScreen*0.01,color: Colors.grey,),
                 CustomListtile(title: "من نحن", icon:Icons.info, onTap: (){
                   Navigator.of(context).pushNamed(Routes.about);
-                })
+                }),Divider(height: hScreen*0.01,color: Colors.grey,),
+                  CustomListtile(title: "تسجيل الخروج", icon: Icons.exit_to_app_outlined, onTap: (){})
               ],
             )
             ),

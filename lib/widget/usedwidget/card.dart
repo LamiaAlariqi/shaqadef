@@ -24,7 +24,7 @@ class CustomCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(wScreen * .02),
         boxShadow: [
           BoxShadow(
-            blurRadius: 3,
+            blurRadius: 2,
             color: PrimaryColor.withOpacity(.2),
             spreadRadius: 0,
             offset: const Offset(2, 2),
@@ -43,14 +43,14 @@ class CustomCard extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 0, // تحديد القيمة الرأسية هنا
+              bottom: 0,
               left: 0,
               right: 0,
               child: SizedBox(
                 height: hScreen * .07,
                 width: double.infinity,
                       child: Padding(
-                        padding:  EdgeInsets.symmetric(horizontal: wScreen*0.02,vertical: hScreen*0.012),
+                        padding:  EdgeInsets.only(left: wScreen*0.02,top: hScreen*0.010,right:wScreen*0.02 ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -66,17 +66,21 @@ class CustomCard extends StatelessWidget {
                                   width: wScreen*0.14,
                                   onPressed: (){},
                                   ),
-                            Column(
-                              children: [
-                              CustomText(text: names, color:PrimaryColor, size: fSize * 0.7,fontFamily: Fonts.kfont1,),
-                              
-                              CustomText(text: "$prices \$", color: PrimaryColor, size: fSize * 0.7,fontFamily: Fonts.kfont1,),
-                              ],
+                            Padding(
+                               padding:  EdgeInsets.only(left: wScreen*0.02,top: hScreen*0.010,right:wScreen*0.02 ),
+                              child: Column(
+                                
+                                children: [
+                                CustomText(text: names, color:PrimaryColor, size: fSize * 0.7,fontFamily: Fonts.kfont1,),
+                                
+                                CustomText(text: "$prices \$", color: PrimaryColor, size: fSize * 0.7,fontFamily: Fonts.kfont1,),
+                                ],
+                              ),
                             ),
                           ],
                         ),
                       ),
-                      // مسافة بين النص والعناصر الأخرى
+                      
                     ),
                   ),
           ]
